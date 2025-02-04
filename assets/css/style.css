@@ -1300,7 +1300,7 @@ a {
 }
 
 .offer-section .offer-section-box:hover {
-  background: var(--e-global-color-accent);
+  
   transition: all 0.3s ease-out;
 }
 
