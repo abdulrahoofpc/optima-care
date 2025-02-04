@@ -32,6 +32,104 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
 </head>
 <body>
+   <!-- Preloader -->
+<!-- Preloader -->
+<div class="preloader">
+    <div class="loader-container">
+        <img src="./assets/images/carousel-bottom-img.png" alt="Loading...">
+        <span class="circle"></span>
+    </div>
+</div>
+
+<script>
+    // Wait until the page fully loads
+    window.addEventListener("load", function() {
+        document.querySelector(".preloader").classList.add("fade-out");
+    });
+</script>
+
+<style>
+/* Preloader styling */
+.preloader {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+/* Loader container */
+.loader-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Preloader image styling */
+.preloader img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    animation: zoom 1.5s infinite alternate ease-in-out;
+}
+
+/* Round animated border */
+.circle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 4px solid transparent;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
+
+/* Fade-out effect */
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Keyframe animation for zooming effect */
+@keyframes zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+/* Keyframe animation for rotating border */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Content hidden initially */
+.content {
+    display: none;
+}
+
+/* Show content when preloader fades */
+.preloader.fade-out + .content {
+    display: block;
+}
+</style>
+<!------------------------------------------------------------------------------------------------------------------>
+
+
     <!-- Top-Header-Section -->
     <div class="home-header-section home-header-section1">
     <div class="header-top header-top1">
@@ -160,7 +258,7 @@
                             </figure>
                         </div>
                         <h5>Home Care</h5>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+                        <p>daily tasks shared living, Supported independent living (SIL ).</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6 mb-lg-0 mb-md-0 mb-3">
@@ -171,7 +269,8 @@
                             </figure>
                         </div>
                         <h5>Care Services</h5>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+                        <p>community nursing,daily living life skills, daily personal activities, daily personal activities high intensity, household tasks, behaviour support .
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6 mb-lg-0 mb-md-0 mb-3">
@@ -181,8 +280,8 @@
                                 <img src="./assets/images/offer-section-img3.png" alt="" class="img-fluid">
                             </figure>
                         </div>
-                        <h5>Medical Escort</h5>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+                        <h5>Travel and transport</h5>
+                        <p>Group centre based Activities, participate community.</p>
                     </div>
                 </div>
             </div>
@@ -191,11 +290,15 @@
 
         <style>
             .offer-section-box {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     background: #fff;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px; /* Fixed height */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .offer-section-box:hover {
@@ -205,11 +308,28 @@
 
 .offer-section-inner figure img {
     transition: transform 0.3s ease-in-out;
+    max-width: 100%; /* Ensure image does not overflow */
 }
 
 .offer-section-box:hover .offer-section-inner figure img {
     transform: scale(1.1);
 }
+
+.offer-section-box h5 {
+    margin-top: 15px;
+}
+
+.offer-section-box p {
+    margin-top: 10px;
+    flex-grow: 1;
+}
+
+@media (max-width: 767px) {
+    .offer-section-box {
+        height: auto; /* Adjust for smaller screens */
+    }
+}
+
 
         </style>
     <!-- Popup-Section -->

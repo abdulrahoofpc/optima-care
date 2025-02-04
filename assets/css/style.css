@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 /*------------------------------------------------------------------
 [Master Stylesheet]
 Project: Sencare
@@ -18,11 +18,11 @@ Project: Sencare
 */
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Montserrat", serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'DM Serif Display', serif;
+  font-family: "Montserrat", serif;
 }
 
 :root {
@@ -54,36 +54,36 @@ html {
 h1 {
   font-size: 70px;
   line-height: 70px;
-  font-weight: 400;
-  font-family: 'DM Serif Display', serif;
+  font-weight: 700;
+  font-family: "Montserrat", serif;
   letter-spacing: -0.1px;
 }
 
 h2 {
   font-size: 48px;
   line-height: 64px;
-  font-weight: 400;
+  font-weight: 700;
   color: var(--e-global-color-primary);
 }
 
 h3 {
   font-size: 40px;
   line-height: 46px;
-  font-weight: bold;
+  font-weight: 500;
   color: var(--e-global-color-white-banner-text);
 }
 
 h4 {
   font-size: 24px;
   line-height: 28px;
-  font-weight: bold;
+  font-weight: 500;
   color: var(--e-global-color-grey-icons);
 }
 
 h5 {
   font-size: 26px;
   line-height: 30px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--e-global-color-white);
   letter-spacing: 0.8px;
   margin-bottom: 11px;
@@ -92,7 +92,7 @@ h5 {
 h6 {
   font-size: 12px;
   line-height: 16px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--e-global-color-yellow-buttons);
   text-transform: uppercase;
 }
@@ -100,7 +100,7 @@ h6 {
 p {
   font-size: 18px;
   line-height: 30px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 a {
@@ -121,7 +121,7 @@ a {
   padding: 10px 0;
   font-size: 14px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 300;
   display: inline;
   margin-left: 10px;
 }

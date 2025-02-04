@@ -152,6 +152,7 @@
     display: flex;
     align-items: center;
     gap: 15px; /* Adjust the gap between icon and content */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .offer-section-icon {
@@ -174,6 +175,52 @@
     font-size: 14px; /* Adjust paragraph size */
     color: #666; /* Adjust paragraph color */
 }
+
+@media (max-width: 1199px) {
+    .offer-section-box {
+        flex-direction: column; /* Stack the icon and content vertically on large tablets and smaller screens */
+        text-align: center; /* Center text for better alignment */
+    }
+
+    .offer-section-icon {
+        margin-bottom: 10px; /* Space between icon and content */
+    }
+}
+
+@media (max-width: 991px) {
+    .offer-section-box {
+        gap: 10px; /* Smaller gap on medium-sized screens */
+    }
+
+    .offer-section-content h5 {
+        font-size: 16px; /* Adjust heading size */
+    }
+
+    .offer-section-content p {
+        font-size: 13px; /* Adjust paragraph size */
+    }
+}
+
+@media (max-width: 767px) {
+    .offer-section-box {
+        flex-direction: column; /* Stack the icon and content vertically on mobile */
+        gap: 20px; /* Increased gap on small screens */
+        text-align: center;
+    }
+
+    .offer-section-icon {
+        font-size: 40px; /* Smaller icon size on mobile */
+    }
+
+    .offer-section-content h5 {
+        font-size: 16px; /* Adjust heading size */
+    }
+
+    .offer-section-content p {
+        font-size: 12px; /* Adjust paragraph size */
+    }
+}
+
     </style>
 
     <!--Happy-Clients-Section  -->
