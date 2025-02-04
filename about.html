@@ -114,6 +114,31 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    let headerSection = document.querySelector(".home-header-section");
+
+    // Array of background images
+    let images = [
+        "./assets/images/banner1-new.jpg",
+        "./assets/images/banner2-new.jpg",
+        "./assets/images/banner-img.jpg",
+    ];
+
+    let index = 0;
+
+    function changeBackground() {
+        headerSection.style.background = `url('${images[index]}') no-repeat center center/cover`;
+        index = (index + 1) % images.length; // Loop back to the first image
+    }
+
+    setInterval(changeBackground, 5000); // Change every 5 seconds
+
+    // Set initial background
+    changeBackground();
+});
+
+    </script>
     
     <!-- offer-section -->
     <div class="offer-section about-offer-section contact-offer-section frequently-asked-section"  data-aos="fade-up">

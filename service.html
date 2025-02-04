@@ -113,6 +113,40 @@
             </div>
         </div>
     </div>
+    <style>
+    .home-header-section {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* Adjust as needed */
+    transition: background 1s ease-in-out;
+    }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    let headerSection = document.querySelector(".home-header-section");
+
+    // Array of background images
+    let images = [
+        "./assets/images/banner1-new.jpg",
+        "./assets/images/banner2-new.jpg",
+        "./assets/images/banner-img.jpg",
+    ];
+
+    let index = 0;
+
+    function changeBackground() {
+        headerSection.style.background = `url('${images[index]}') no-repeat center center/cover`;
+        index = (index + 1) % images.length; // Loop back to the first image
+    }
+
+    setInterval(changeBackground, 5000); // Change every 5 seconds
+
+    // Set initial background
+    changeBackground();
+});
+
+    </script>
 </div>
 
     <!-- Service-Offer-Section -->
