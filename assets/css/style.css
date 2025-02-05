@@ -211,10 +211,11 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: 650px;
 }
 
 .main-header {
-  padding: 38px 0;
+  padding: 10px 0 38px;
 }
 
 .home-header-section .navbar-nav li a:hover {
@@ -277,7 +278,7 @@ a {
 
 .home-banner-section .banner-container-box .home-banner-text h1 {
   color: var(--e-global-color-white);
-  margin-bottom: 26px;
+  /* margin-bottom: 26px; */
 }
 
 .home-banner-section .banner-container-box .home-banner-text .banner-paragraph {
@@ -308,7 +309,7 @@ a {
 }
 
 .home-header-section .home-banner-section {
-  padding: 177px 0 272px;
+  padding: 0px 0 272px;
 }
 
 .sancare-drop-down {
@@ -1114,7 +1115,7 @@ a {
 }
 
 .sub-header-section .navbar-nav li .index2-navlink {
-  color: var(--e-global-color-primary) !important;
+  /* color: var(--e-global-color-primary) !important; */
   text-transform: uppercase;
 }
 
@@ -1417,11 +1418,11 @@ a {
 }
 
 .sencare-section .img-text-box {
-  background: var(--e-global-dark-moderate-violet);
+  background:var(--e-global-color-white);
   display: inline-block;
   padding: 20px 46px 20px;
   border-radius: 24px;
-  color: var(--e-global-color-white);
+  color: var(--e-global-color-primary);
   text-align: center;
   position: absolute;
   z-index: 1;
@@ -1995,8 +1996,8 @@ a {
 }
 
 .offer-section1 {
-  padding: 0px 0 0px;
-  margin-top: -195px;
+  padding: 50px 0 0px;
+  /* margin-top: -195px; */
 }
 
 /* popup-section */
@@ -2788,7 +2789,7 @@ a {
 }
 
 .contact-offer-section {
-  padding: 133px 0 0px;
+  padding: 190px 0 0px;
   margin-top: -231px;
 }
 
@@ -3212,6 +3213,7 @@ button {
 .img-fluid {
   max-width: 100%;
   height: auto;
+  
 }
 
 .blog-content {

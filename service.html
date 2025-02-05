@@ -91,62 +91,120 @@
         </div>
     </header>
      <!-- BANNER-SECTION -->
+     <!-- BANNER-SECTION -->
      <div class="home-banner-section overflow-hidden">
         <div class="banner-container-box">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-md-12 col-sm-12 mb-md-0 mb-4 text-lg-left text-center">
-                        <div class="home-banner-text"  data-aos="fade-up">
-                            <h1>Yes, we’re a disability service provider. But we’re so much more.</h1>
-                            <p class="banner-paragraph">
-                                Duis aute irure dolor in reprehenderit in voluptate velit es
-                                cillum dolore eu fugiat nulla pariatur excepteur sint occae
-                                cupidatat non proident.</p>
+                    <div class="col-lg-7 col-md-12 col-sm-12 mt-3 mb-md-0 mb-4 text-lg-left text-center">
+                        <div class="home-banner-text" data-aos="fade-up">
+                            <h1 id="main-text" class="fade-text active" style="font-weight: 400;font-size: 50px;">EMPOWERING</h1>
+                            <h1 id="sub-text" class="fade-text active" style="font-size: 60px;">ABILITIES, ENRICHING LIVES</h1>
+                            
+                            <p id="banner-paragraph" class="banner-paragraph fade-text active">
+                                We provide the best possible care, tailored to individual needs, using innovative solutions while ensuring accessibility for all.
+                            </p>
                             <div class="banner-btn discover-btn-banner">
-                                <!-- <a href="about.html" class="text-decoration-none">OUR CARE SERVICES</a> -->
+                                <a href="about.html" class="text-decoration-none btn btn-primary">OUR SERVICES</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-12"></div>
                 </div>
+                <style>
+                    .fade-text {
+                        opacity: 0;
+                        transition: opacity 1s ease-in-out;
+                    }
+                    .fade-text.active {
+                        opacity: 1;
+                    }
+                </style>
+                
+                <script>
+                    const texts = [
+                        {   
+
+                            main: "EMPOWERING",
+                            sub: "ABILITIES, ENRICHING LIVES",
+                            paragraph: "We provide the best possible care, tailored to individual needs, using innovative solutions while ensuring accessibility for all."
+                        },
+                        {
+                            main: "Beyond support",
+                            sub: "unlocking potential, one life at a time.",
+                            paragraph: "Our mission is to support individuals in reaching their full potential with compassionate care and cutting-edge solutions."
+                        },
+                        {
+                            main: "TRANSFORMING",
+                            sub: "LIVES WITH PASSION",
+                            paragraph: "We believe in making a difference by empowering individuals through personalized and accessible care."
+                        }
+                    ];
+                
+                    let index = 0;
+                
+                    function changeText() {
+                        let mainText = document.getElementById("main-text");
+                        let subText = document.getElementById("sub-text");
+                        let paragraph = document.getElementById("banner-paragraph");
+                
+                        // Fade out
+                        mainText.classList.remove("active");
+                        subText.classList.remove("active");
+                        paragraph.classList.remove("active");
+                
+                        setTimeout(() => {
+                            // Change content
+                            index = (index + 1) % texts.length;
+                            mainText.innerText = texts[index].main;
+                            subText.innerText = texts[index].sub;
+                            paragraph.innerText = texts[index].paragraph;
+                
+                            // Fade in
+                            mainText.classList.add("active");
+                            subText.classList.add("active");
+                            paragraph.classList.add("active");
+                        }, 1000);
+                    }
+                
+                    setInterval(changeText, 4000); // Change text every 4 seconds
+                </script>
             </div>
         </div>
     </div>
-    <style>
-    .home-header-section {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    /* Adjust as needed */
-    transition: background 1s ease-in-out;
-    }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-    let headerSection = document.querySelector(".home-header-section");
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+let headerSection = document.querySelector(".home-header-section");
 
-    // Array of background images
-    let images = [
-        "./assets/images/banner1-new.jpg",
-        "./assets/images/banner2-new.jpg",
-        "./assets/images/banner-img.jpg",
-    ];
+// Array of background images
+let images = [
+    "./assets/images/banner1-new.jpg",
+    "./assets/images/banner2-new.jpg",
+    "./assets/images/banner-img.jpg",
+];
 
-    let index = 0;
+let index = 0;
 
-    function changeBackground() {
-        headerSection.style.background = `url('${images[index]}') no-repeat center center/cover`;
-        index = (index + 1) % images.length; // Loop back to the first image
-    }
+function changeBackground() {
+    headerSection.style.background = `url('${images[index]}') no-repeat center center/cover`;
+    index = (index + 1) % images.length; // Loop back to the first image
+}
 
-    setInterval(changeBackground, 5000); // Change every 5 seconds
+setInterval(changeBackground, 5000); // Change every 5 seconds
 
-    // Set initial background
-    changeBackground();
+// Set initial background
+changeBackground();
 });
 
-    </script>
+</script>
+
+
+
+
+
+
+
 </div>
 
     <!-- Service-Offer-Section -->
@@ -162,7 +220,7 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <figure class="service-figure-mb" data-modal-target="#modal1">
-                                    <img src="./assets/images/service-offer-section-img1.png" alt="" class="img-fluid hover-animate">
+                                    <img src="./assets/images/services/Images-01.png" alt="" class="img-fluid hover-animate">
                                 </figure>
                                 <div class="offer-img-content">
                                     <h5>Assistance with Daily Life</h5>
@@ -171,7 +229,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <figure class="service-figure-mb" data-modal-target="#modal2">
-                                    <img src="./assets/images/service-offer-section-img1.png" alt="" class="img-fluid hover-animate">
+                                    <img src="./assets/images/services/Images-03.png" alt="" class="img-fluid hover-animate">
                                 </figure>
                                 <div class="offer-img-content">
                                     <h5>Improved Daily Living Skills</h5>
@@ -180,7 +238,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <figure class="service-figure-mb" data-modal-target="#modal3">
-                                    <img src="./assets/images/service-offer-section-img3.png" alt="" class="img-fluid hover-animate">
+                                    <img src="./assets/images/services/Images-04.png" alt="" class="img-fluid hover-animate">
                                 </figure>
                                 <div class="offer-img-content">
                                     <h5>Transport </h5>
@@ -190,7 +248,7 @@
                             <!-- second -->
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <figure class="service-figure-mb" data-modal-target="#modal4">
-                                    <img src="./assets/images/service-offer-section-img1.png" alt="" class="img-fluid hover-animate">
+                                    <img src="./assets/images/services/Images-04.png" alt="" class="img-fluid hover-animate">
                                 </figure>
                                 <div class="offer-img-content">
                                     <h5>Home and Living</h5>
@@ -199,7 +257,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <figure class="service-figure-mb" data-modal-target="#modal5">
-                                    <img src="./assets/images/service-offer-section-img2.png" alt="" class="img-fluid hover-animate">
+                                    <img src="./assets/images/services/Images-05.png" alt="" class="img-fluid hover-animate">
                                 </figure>
                                 <div class="offer-img-content">
                                     <h5>Behaviour Support</h5>
@@ -208,7 +266,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <figure class="service-figure-mb" data-modal-target="#modal6">
-                                    <img src="./assets/images/service-offer-section-img3.png" alt="" class="img-fluid hover-animate">
+                                    <img src="./assets/images/services/Images-06.png" alt="" class="img-fluid hover-animate">
                                 </figure>
                                 <div class="offer-img-content">
                                     <h5>Health & Wellbeing</h5>
@@ -219,7 +277,7 @@
                              
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <figure class="service-figure-mb" data-modal-target="#modal7">
-                                    <img src="./assets/images/service-offer-section-img2.png" alt="" class="img-fluid hover-animate">
+                                    <img src="./assets/images/services/Images-02.png" alt="" class="img-fluid hover-animate">
                                 </figure>
                                 <div class="offer-img-content">
                                     <h5>Assistance with Social, Economic and Community Participation </h5>
@@ -228,7 +286,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <figure class="service-figure-mb" data-modal-target="#modal8">
-                                    <img src="./assets/images/service-offer-section-img2.png" alt="" class="img-fluid hover-animate">
+                                    <img src="./assets/images/services/Images-08.png" alt="" class="img-fluid hover-animate">
                                 </figure>
                                 <div class="offer-img-content">
                                     <h5>Increased Social & Community Participation</h5>
@@ -237,7 +295,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 <figure class="service-figure-mb" data-modal-target="#modal9">
-                                    <img src="./assets/images/service-offer-section-img3.png" alt="" class="img-fluid hover-animate">
+                                    <img src="./assets/images/services/Images-09.png" alt="" class="img-fluid hover-animate">
                                 </figure>
                                 <div class="offer-img-content">
                                     <h5>Specialist Disability Accommodation (SDA) </h5>
@@ -415,7 +473,7 @@
 
 .hover-animate:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
 }
 
 /* Modal Styles */

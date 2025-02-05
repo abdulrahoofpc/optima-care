@@ -179,7 +179,7 @@
   }
   .offer-section1 {
     padding: 0 0px 96px !important;
-    margin-top: -137px;
+    margin-top: 68px;
 }
 h1 {
   font-size: 62px;
@@ -187,7 +187,7 @@ h1 {
 }
 .about-offer-section {
   padding: 0 0px 96px !important;
-  margin-top: -343px;
+  margin-top: -100px;
 }
 /* menu-section */
 .menu-section .menu-right-section {
@@ -1078,7 +1078,7 @@ h2 {
 }
 .offer-section1 {
   padding: 0 0px 63px !important;
-  margin-top: -137px;
+  /* margin-top: -137px; */
 }
 .sencare-section {
   padding: 60px 0;
@@ -2416,7 +2416,7 @@ h2 {
 }
 .offer-section1 {
   padding: 0 0px 50px !important;
-  margin-top: -138px;
+  /* margin-top: -138px; */
 }
 
 /* login page */
@@ -3063,7 +3063,7 @@ h2 {
 }
 .contact-offer-section {
   padding: 0px 0 0px !important;
-  margin-top: -141px;
+  margin-top: -100px;
 }
 .frequently-asked-section {
   padding:0px 0 0px !important;
