@@ -682,7 +682,7 @@ display: none;
 
   }
   .hed2{
-    font-size: 54px !important;
+    font-size: 55px !important;
 
   }
   .para1{
@@ -2718,6 +2718,7 @@ h2 {
 .Our-teams-section .teams-title {
   margin-bottom: 26px;
   padding: 0 4px;
+  text-align: justify;
 }
 .Our-teams-section .teams-content p {
   padding: 0 29px;
