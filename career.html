@@ -167,20 +167,122 @@
                         </figure>
                     </div>
                 </div> -->
-                <div class="col-lg-12 col-md-6 col-sm-12">
+                <!-- <div class="col-lg-12 col-md-6 col-sm-12">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 ms-3 me-3">
                             <div class="menu-right-section">
                                 <h5>Disability Support Worker</h5>
                                 <p>Disability Support Workers provide care, emotional support,<br> physical assistance and supervision for people with physical and/or intellectual disabilities.</p>  
                                 <div class="popup-btn">
-                                    <a href="signup.html">Join us</a>
+                                    <a onclick="openPopup()">Join us</a>
                                 </div>
-                               
+                            </div> 
+                        </div>
+                    </div>
+                </div> -->
+            
+                <div class="col-lg-12 col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 ms-3 me-3">
+                            <div class="menu-right-section">
+                                <h5 style="font-weight: 600;  font-family: 'Montserrat',">Join Our Team</h5>
+                                <p>Disability Support Workers provide care, emotional support,<br> physical assistance and supervision for people with physical and/or intellectual disabilities.</p>  
+                                <div class="popup-btn" >
+                                    <a onclick="openPopup()" style="background-color: #ffff;">Join Now</a>
+                                </div>
                             </div> 
                         </div>
                     </div>
                 </div>
+            
+                <div class="popup-overlay" id="popup">
+                    <div class="popup-content">
+                        <span class="close-btn" onclick="closePopup()">&times;</span>
+                        <h2 style="font-size: 25px;">Join Our Team</h2>
+                        <form method="post" action="join-team.php">
+                            <input class="form-input-fields" type="text" id="fname" name="fname" placeholder="First Name" required>
+                            <input class="form-input-fields" type="text" id="lname" name="lname" placeholder="Last Name" required>
+                            <input class="form-input-fields" type="email" id="email" name="email" placeholder="Email" required>
+                            <input class="form-input-fields" type="text" id="phone" name="phone" placeholder="Phone" required>
+                            <textarea id="message" name="message" class="message-field" placeholder="Why do you want to join?" required></textarea>
+                            <div class="popup-btn">
+                                <button type="submit">Apply Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            
+                <script>
+                    function openPopup() {
+                        document.getElementById("popup").style.display = "flex";
+                    }
+                    function closePopup() {
+                        document.getElementById("popup").style.display = "none";
+                    }
+                </script>
+            
+                <script>
+                    function openPopup() {
+                        document.getElementById("popup").style.display = "flex";
+                    }
+                    function closePopup() {
+                        document.getElementById("popup").style.display = "none";
+                    }
+                </script>
+
+<style>
+    .popup-overlay {
+        z-index: 1000;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+    }
+    .popup-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .close-btn {
+        cursor: pointer;
+        color: #ffff;
+        font-size: 30px;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+    .popup-btn a, .popup-btn button {
+        cursor: pointer;
+        color: white;
+        background:var(--e-global-color-accent);
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+    .popup-btn button:hover {
+        background:var(--e-global-color-accent);
+    }
+    .form-input-fields, .message-field {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+</style>
             </div>
         </div>
         <div class="choose-us-section">
@@ -224,40 +326,7 @@
         </div>
     </div>
 
-    <section class="happy-clients-section happy-clients-section3 contact-form-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <h2  data-aos="fade-up">Contact Form</h2>
-                        <div class="carousel-card-form position-relative"> 
-                                <form method="post" action="contact-form.php">
-                                    <div class="row">                           
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                           <div class="border-bottom-outer position-relative">
-                                            <input class="form-input-fields" type="text" id="fname" name="fname" placeholder="First Name">
-                                           </div>
-                                            <input class="form-input-fields" type="text" id="email" name="email" placeholder="Email">
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <input class="form-input-fields" type="text" id="lname" name="lname" placeholder="Last Name">
-                                            <input class="form-input-fields" type="text" id="phone" name="phone" placeholder="Phone">
-                                        </div>                         
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <input type="text" id="message" name="message" class="message-field" placeholder="Message">
-                                            <div class="popup-btn">
-                                                <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
-                                            </div>
-                                        </div>
-                                        <figure class="carousel-bottom-fig"><img src="./assets/images/carousel-bottom-img.png" alt="" class="img-fluid"></figure>
-                                    </div>
-                                </form>
-                        </div>
-                </div> 
-            </div>
-        </div>
-    </section> 
+    
 
 
     <!-- Choose-us-section -->
