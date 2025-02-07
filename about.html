@@ -32,82 +32,64 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
 </head>
 <body>
-    <!-- Preloader -->
-<div class="preloader">
-    <div class="loader-container">
-        <div class="image"></div>
-    </div>
+ <!---------------------- Preloader------------------------------------------------------->
+ <div id="preloader">
+    <img src="./assets/images/carousel-bottom-img.png" alt="Loading..." class="zoom-in">
 </div>
 
-<script>
-    // Wait until the page fully loads
-    window.addEventListener("load", function() {
-        document.querySelector(".preloader").classList.add("fade-out");
-    });
-</script>
-
 <style>
-/* Preloader Styling */
-.preloader {
-    z-index: 100;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #f8f8f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    /* Preloader Styling */
+#preloader {
+position: fixed;
+width: 100%;
+height: 100vh;
+background: #ffffff;
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 9999;
+transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
 }
 
-/* Loader Container */
-.loader-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Hide preloader when loaded */
+#preloader.hidden {
+opacity: 0;
+visibility: hidden;
 }
 
-/* Image with Zoom-Out Effect */
-.image {
-    width: 150px; /* Start bigger */
-    height: 150px;
-    border-radius: 50%;
-    background-image: url("./assets/images/carousel-bottom-img.png"); /* Replace with your image */
-    background-size: cover;
-    background-position: center;
-    animation: zoomOut 1.5s infinite alternate ease-in-out;
+/* Zoom-in Animation */
+.zoom-in {
+width: 100px;  /* Adjust size */
+height: 100px;
+animation: zoom 1.5s infinite ease-in-out;
 }
 
-/* Fade-out Effect */
-.preloader.fade-out {
-    opacity: 0;
-    visibility: hidden;
+/* Keyframes for Zoom Effect */
+@keyframes zoom {
+0% { transform: scale(1); opacity: 0.7; }
+50% { transform: scale(1.2); opacity: 1; }
+100% { transform: scale(1); opacity: 0.7; }
 }
 
-/* Keyframe for Zoom-Out Effect */
-@keyframes zoomOut {
-    from {
-        transform: scale(1.2); /* Starts big */
-    }
-    to {
-        transform: scale(1); /* Zooms out to normal size */
-    }
-}
-
-/* Content Hidden Initially */
+/* Page Content */
 .content {
-    display: none;
+display: none; /* Hide content initially */
+text-align: center;
+margin-top: 50px;
 }
 
-/* Show Content When Preloader Fades */
-.preloader.fade-out + .content {
-    display: block;
-}
 </style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+setTimeout(() => {
+    document.getElementById("preloader").classList.add("hidden");
+    document.querySelector(".content").style.display = "block";
+}, 2000); // Adjust time as needed
+});
 
+
+</script>
+<!------------------------------------------- preloader-end ------------------------------------------------------------>
 <div class="header-top header-top1">
     <div class="container">
         <div class="row">
@@ -199,23 +181,23 @@
                 
                 <script>
                     const texts = [
-                        {   
+                            {
 
-                            main: "EMPOWERING",
-                            sub: "ABILITIES, ENRICHING LIVES",
-                            paragraph: "We provide the best possible care, tailored to individual needs, using innovative solutions while ensuring accessibility for all."
-                        },
-                        {
-                            main: "Beyond support",
-                            sub: "unlocking potential, one life at a time.",
-                            paragraph: "Our mission is to support individuals in reaching their full potential with compassionate care and cutting-edge solutions."
-                        },
-                        {
-                            main: "TRANSFORMING",
-                            sub: "LIVES WITH PASSION",
-                            paragraph: "We believe in making a difference by empowering individuals through personalized and accessible care."
-                        }
-                    ];
+                                main: "EMPOWERING",
+                                sub: "ABILITIES, ENRICHING LIVES",
+                                paragraph: "We provide the best possible care, tailored to individual needs, using innovative solutions while ensuring accessibility for all."
+                            },
+                            {
+                                main: "BEYOND SUPPORT",
+                                sub: "UNLOCKING POTENTIAL, ONE LIFE AT A TIME.",
+                                paragraph: "Our mission is to support individuals in reaching their full potential with compassionate care and cutting-edge solutions."
+                            },
+                            {
+                                main: "TRANSFORMING",
+                                sub: "LIVES WITH PASSION",
+                                paragraph: "We believe in making a difference by empowering individuals through personalized and accessible care."
+                            }
+                        ];
                 
                     let index = 0;
                 
@@ -275,102 +257,7 @@ changeBackground();
 
 </script>
     
-    <!-- offer-section -->
-    <div class="offer-section about-offer-section contact-offer-section frequently-asked-section"  data-aos="fade-up">
-       
-       <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 mb-lg-0 mb-md-0 mb-3">
-                <div class="cyber-content accordian-text position-relative">
-                    <div class="accordian-inner">
-                        <div id="accordion1">
-                            <div class="accordion-card">
-                                <div class="" id="heading1">
-                                    <a href="#" class="btn btn-link text-decoration-none collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                                        <h5>About</h5>
-                                    </a>
-                                </div>
-                                <div id="collapse1" class="collapse" aria-labelledby="heading1">
-                                    <div class="card-body p-0">
-                                        <p class="text-left accordian-text-color">
-                                            At OptimaCare Solutions, we are dedicated to revolutionizing healthcare through innovation, accessibility, and
-                                            compassionate care. Our mission is to provide high-quality, personalized healthcare that prioritizes the well being of
-                                            each individual while fostering a healthier and more informed community. By integrating advanced medical practices with
-                                            a patient-first approach, we aim to enhance the overall healthcare experience, ensuring that every person receives the
-                                            best possible care tailored to their unique needs.
-                                        </p>
-                                        <p class="text-left accordian-text-color">
-                                            With a vision to lead in healthcare excellence, we are committed to continuous improvement, education, and holistic
-                                            wellness. We believe that true healthcare extends beyond treatment it is about empowering individuals with knowledge,
-                                            resources, and support to make informed health decisions. By embracing cutting-edge technology and fostering
-                                            collaboration, we strive to create a future where everyone has access to top-tier healthcare, ultimately transforming
-                                            lives and strengthening communities.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 2 -->
-                <div class="cyber-content accordian-text position-relative">
-                    <div class="accordian-inner">
-                        <div id="accordion2">
-                            <div class="accordion-card">
-                                <div class="" id="heading2">
-                                    <a href="#" class="btn btn-link text-decoration-none collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                        <h5>Our Mission</h5>
-                                    </a>
-                                </div>
-                                <div id="collapse2" class="collapse" aria-labelledby="heading2" >
-                                    <div class="card-body p-0">
-                                        <p class="text-left accordian-text-color" >
-                                            At OptimaCare Solutions, our mission is to provide the highest quality healthcare tailored to the unique needs of each
-                                            individual. We are committed to delivering compassionate, patient-centered care that enhances well-being and promotes a
-                                            healthier community. Through innovation, advanced medical practices, and a dedicated team of professionals, we strive to
-                                            improve healthcare accessibility, efficiency, and overall patient experience. Our goal is to ensure that every person
-                                            receives the best possible care, fostering trust and long-term relationships.
-                                        </p>                                           
-                                        <p class="text-left accordian-text-color" >
-                                            We believe that healthcare goes beyond treatment it’s about education, prevention, and empowering individuals to make
-                                            informed health decisions. By integrating cutting-edge technology with a human touch, we create a supportive environment
-                                            where patients feel valued and heard. Our commitment to continuous improvement and holistic wellness drives us to set
-                                            new standards in healthcare excellence. At OptimaCare Solutions, we don’t just treat illnesses; we transform lives by
-                                            promoting a culture of health, awareness, and care.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 3 -->
-                <div class="cyber-content accordian-text position-relative">
-                    <div class="accordian-inner">
-                        <div id="accordion3">
-                            <div class="accordion-card">
-                                <div class="" id="heading3">
-                                    <a href="#" class="btn btn-link text-decoration-none collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                        <h5>Our Vission</h5>
-                                    </a>
-                                </div>
-                                <div id="collapse3" class="collapse" aria-labelledby="heading3">
-                                    <div class="card-body p-0">
-                                        <p class="text-left accordian-text-color">
-                                            Our vision is to be a leader in delivering innovative, accessible, and high-quality healthcare that transforms lives and strengthens communities. We aspire to set new standards in medical excellence by integrating advanced technology, compassionate care, and patient-focused solutions. By continuously evolving and embracing the latest advancements in healthcare, we aim to create a system that is efficient, inclusive, and centered around the well-being of every individual.
-                                        </p>
-                                        <p class="text-left accordian-text-color">At OptimaCare Solutions, we believe that true healthcare extends beyond medical treatment—it is about empowering individuals with the knowledge, resources, and support they need to lead healthier lives. We envision a future where every person, regardless of background or circumstance, has access to top-tier healthcare services that enhance their quality of life. Through collaboration, education, and a commitment to continuous improvement, we strive to build a healthier, more resilient, and informed society.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-       </div>
-    </div>
+ 
 
 <!--------------------------------------------------------------------------------------->
 <div class="Our-teams-section" style="background-color: #fff;">
@@ -565,15 +452,15 @@ changeBackground();
 </div>  -->
     <!--Happy-Clients-Section  -->
 
-<!-- Footer -->
-<div class="footer-section footer-img-section footer-index-img position-relative">
+   <!-- Footer -->
+   <div class="footer-section footer-img-section footer-index-img position-relative">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-4 col-sm-12">
                 <figure class="sencare-logo-footer">
                     <a class="navbar-brand mr-0" href="index.html"><img src="./assets/images/sencare-logo2.png" alt="" class="img-fluid"></a>
                 </figure>
-                <p class="footer-text">Copyright 2020 DesigningMedia. All Rights reserved</p>
+                <p class="footer-text">Copyright 2025 OptimaCare All Rights reserved</p>
                 <div class="social-icons text-center">
                     <ul class="list-unstyled">
                         <li><a href="" class="text-decoration-none"><i class="fa-brands fa-twitter social-networks"></i></a></li>
@@ -590,34 +477,29 @@ changeBackground();
                         </h4>
                     </li>
                     <li>
-                        <a href="about.html" class="text-decoration-none footer-link-p">
-                            About us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="comming-soon.html" class="text-decoration-none footer-link-p">
-                           Comming Soon
-                        </a>
-                    </li>
-                    <li>
-                        <a href="404page.html" class="text-decoration-none footer-link-p">
-                            404 Page
+                        <a href="index.html" class="text-decoration-none footer-link-p">
+                            Home
                         </a>
                     </li>
                     <li>
                         <a href="about.html" class="text-decoration-none footer-link-p">
-                            About us
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="service.html" class="text-decoration-none footer-link-p">
+                           Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="career.html" class="text-decoration-none footer-link-p">
+                            Career
                         </a>
                     </li>
 
                     <li>
                         <a href="faq.html" class="text-decoration-none footer-link-p">
-                            Faq Page
-                        </a>
-                    </li>
-                    <li>
-                        <a href="contact.html" class="text-decoration-none footer-link-p">
-                            Contact us
+                            Contact
                         </a>
                     </li>
                 </ul>
@@ -629,36 +511,36 @@ changeBackground();
                             Contact Info
                         </h4>
                     </li>
-                    <li class="footer-margin-bottom">
+                    <!-- <li class="footer-margin-bottom">
                         <a href="about.html" class="text-decoration-none">
                             Address:
                         </a>
-                    </li>
-                    <li class="pr-2 mb-3">
+                    </li> -->
+                    <!-- <li class="pr-2 mb-3">
                         <a  class="text-decoration-none">
                             121 King Street Melbourne,
                             3000, Australia
                         </a>
-                    </li>
+                    </li> -->
                     <li class="footer-margin-bottom">
                         <a class="text-decoration-none">
                             Email:
                         </a>
                     </li>
                     <li class="mb-3">
-                        <a href="mailto:info@sencare.com" class="text-decoration-none">
-                            info@sencare.com
+                        <a href="mailto:info@sencare.com" class="text-decoration-none" style="font-size: 14PX;">
+                            Info@optimacaresolutions.com.au
                         </a>
                     </li>
 
                     <li class="footer-margin-bottom">
                         <a href="Find-Dealer.html" class="text-decoration-none">
-                            Phone:
+                            Call:
                         </a>
                     </li>
                     <li>
                         <a  href="tel:+123456789" class="text-decoration-none">
-                            +1 23 45 6789
+                            0473 481 552
                         </a>
                     </li>
                 </ul>
@@ -667,7 +549,7 @@ changeBackground();
                 <ul class="list-unstyled">
                     <li class="list-item">
                         <h4 class="footer-link  footer-heading instagram-heading">
-                           Instagram
+                           Gallery
                         </h4>
                     </li>
                 </ul>
@@ -702,7 +584,7 @@ changeBackground();
         </div>
     </div>
     </div>
-</div>           
+</div>            
     <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

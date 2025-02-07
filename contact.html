@@ -32,7 +32,67 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
 </head>
 <body>
-    <div class="header-top header-top1">
+
+<!---------------------- Preloader------------------------------------------------------->
+    <div id="preloader">
+        <img src="./assets/images/carousel-bottom-img.png" alt="Loading..." class="zoom-in">
+    </div>
+
+    <style>
+        /* Preloader Styling */
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+}
+
+/* Hide preloader when loaded */
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Zoom-in Animation */
+.zoom-in {
+    width: 100px;  /* Adjust size */
+    height: 100px;
+    animation: zoom 1.5s infinite ease-in-out;
+}
+
+/* Keyframes for Zoom Effect */
+@keyframes zoom {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.7; }
+}
+
+/* Page Content */
+.content {
+    display: none; /* Hide content initially */
+    text-align: center;
+    margin-top: 50px;
+}
+
+    </style>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        document.getElementById("preloader").classList.add("hidden");
+        document.querySelector(".content").style.display = "block";
+    }, 2000); // Adjust time as needed
+});
+
+
+    </script>
+<!------------------------------------------- preloader-end ------------------------------------------------------------>
+    
+<div class="header-top header-top1">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 d-md-block d-sm-none">
@@ -96,16 +156,16 @@
             <div class="banner-container-box">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-7 col-md-12 col-sm-12 mt-3 mb-md-0 mb-4 text-lg-left text-center">
+                        <div class="col-lg-7 col-md-12 col-sm-12 mt-5 mb-md-0 mb-4 text-lg-left text-center">
                             <div class="mb-4 home-banner-text" data-aos="fade-up">
-                                <h1 id="main-text" class="hed1 fade-text active" style="font-weight: 400;font-size: 60px;">We alway here to</h1>
-                                <h1 id="sub-text" class="hed2 fade-text active" style="font-size: 60px;">Help you</h1>
+                                <h1 id="main-text" class="hed1 fade-text active" style="font-weight: 400;font-size: 60px;">WE ALWAY HERE TO</h1>
+                                <h1 id="sub-text" class="hed2 fade-text active" style="font-size: 60px;">HELP YOU</h1>
                                 
                                 <p id="banner-paragraph" class="banner-paragraph fade-text active">
                                     We provide the best possible care, tailored to individual needs, using innovative solutions while ensuring accessibility for all.
                                 </p>
                                 <!-- <div class="banner-btn discover-btn-banner">
-                                    <a href="about.html" class="text-decoration-none btn btn-primary">OUR SERVICES</a>
+                                    <a href="career.html" class="text-decoration-none btn btn-primary">Contact</a>
                                 </div> -->
                             </div>
                         </div>
@@ -125,8 +185,8 @@
                         const texts = [
                             {   
 
-                                main: "We alway here to",
-                                sub: "Help you",
+                                main: "WE ALWAY HERE TO",
+                                sub: "HELP YOU",
                                 paragraph: "We provide the best possible care, tailored to individual needs, using innovative solutions while ensuring accessibility for all."
                             },
                             // {
@@ -210,7 +270,7 @@
                         </div>
                         <div class="offer-section-content">
                             <h5>Phone</h5>
-                            <p>Phone: 0800 123 45 67 890<br> Fax: 0800 123 45 67 890</p>
+                            <p>Phone: 0473 481 552</p>
                         </div>
                     </div>
                 </div>
@@ -221,7 +281,7 @@
                         </div>
                         <div class="offer-section-content">
                             <h5>Email</h5>
-                            <p>info@sencare.com <br> support@sencare.com</p>
+                            <p>Info@optimacaresolutions.com.au</p>
                         </div>
                     </div>
                 </div>
@@ -348,7 +408,7 @@
                 <figure class="sencare-logo-footer">
                     <a class="navbar-brand mr-0" href="index.html"><img src="./assets/images/sencare-logo2.png" alt="" class="img-fluid"></a>
                 </figure>
-                <p class="footer-text">Copyright 2020 DesigningMedia. All Rights reserved</p>
+                <p class="footer-text">Copyright 2025 OptimaCare All Rights reserved</p>
                 <div class="social-icons text-center">
                     <ul class="list-unstyled">
                         <li><a href="" class="text-decoration-none"><i class="fa-brands fa-twitter social-networks"></i></a></li>
@@ -365,34 +425,29 @@
                         </h4>
                     </li>
                     <li>
+                        <a href="index.html" class="text-decoration-none footer-link-p">
+                            Home
+                        </a>
+                    </li>
+                    <li>
                         <a href="about.html" class="text-decoration-none footer-link-p">
                             About
                         </a>
                     </li>
                     <li>
-                        <a href="comming-soon.html" class="text-decoration-none footer-link-p">
-                           Features
+                        <a href="service.html" class="text-decoration-none footer-link-p">
+                           Services
                         </a>
                     </li>
                     <li>
-                        <a href="404page.html" class="text-decoration-none footer-link-p">
-                            Variations
-                        </a>
-                    </li>
-                    <li>
-                        <a href="about.html" class="text-decoration-none footer-link-p">
-                            Specials
+                        <a href="career.html" class="text-decoration-none footer-link-p">
+                            Career
                         </a>
                     </li>
 
                     <li>
                         <a href="faq.html" class="text-decoration-none footer-link-p">
-                            Find Dealer
-                        </a>
-                    </li>
-                    <li>
-                        <a href="contact.html" class="text-decoration-none footer-link-p">
-                            Get in Touch
+                            Contact
                         </a>
                     </li>
                 </ul>
@@ -404,36 +459,36 @@
                             Contact Info
                         </h4>
                     </li>
-                    <li class="footer-margin-bottom">
+                    <!-- <li class="footer-margin-bottom">
                         <a href="about.html" class="text-decoration-none">
                             Address:
                         </a>
-                    </li>
-                    <li class="pr-2 mb-3">
+                    </li> -->
+                    <!-- <li class="pr-2 mb-3">
                         <a  class="text-decoration-none">
                             121 King Street Melbourne,
                             3000, Australia
                         </a>
-                    </li>
+                    </li> -->
                     <li class="footer-margin-bottom">
                         <a class="text-decoration-none">
                             Email:
                         </a>
                     </li>
                     <li class="mb-3">
-                        <a href="mailto:info@sencare.com" class="text-decoration-none">
-                            info@sencare.com
+                        <a href="mailto:info@sencare.com" class="text-decoration-none" style="font-size: 14PX;">
+                            Info@optimacaresolutions.com.au
                         </a>
                     </li>
 
                     <li class="footer-margin-bottom">
                         <a href="Find-Dealer.html" class="text-decoration-none">
-                            Phone:
+                            Call:
                         </a>
                     </li>
                     <li>
                         <a  href="tel:+123456789" class="text-decoration-none">
-                            +1 23 45 6789
+                            0473 481 552
                         </a>
                     </li>
                 </ul>
@@ -442,7 +497,7 @@
                 <ul class="list-unstyled">
                     <li class="list-item">
                         <h4 class="footer-link  footer-heading instagram-heading">
-                           Instagram
+                           Gallery
                         </h4>
                     </li>
                 </ul>
@@ -477,7 +532,10 @@
         </div>
     </div>
     </div>
-</div>             
+</div>  
+
+
+
     <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

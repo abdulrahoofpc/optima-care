@@ -32,102 +32,65 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
 </head>
 <body>
-   <!-- Preloader -->
-<!-- Preloader -->
-<div class="preloader">
-    <div class="loader-container">
-        <img src="./assets/images/carousel-bottom-img.png" alt="Loading...">
-        <span class="circle"></span>
-    </div>
+   
+<!---------------------- Preloader------------------------------------------------------->
+<div id="preloader">
+    <img src="./assets/images/carousel-bottom-img.png" alt="Loading..." class="zoom-in">
 </div>
 
-<script>
-    // Wait until the page fully loads
-    window.addEventListener("load", function() {
-        document.querySelector(".preloader").classList.add("fade-out");
-    });
-</script>
-
 <style>
-/* Preloader styling */
-.preloader {
-    z-index: 100;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    /* Preloader Styling */
+#preloader {
+position: fixed;
+width: 100%;
+height: 100vh;
+background: #ffffff;
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 9999;
+transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
 }
 
-/* Loader container */
-.loader-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Hide preloader when loaded */
+#preloader.hidden {
+opacity: 0;
+visibility: hidden;
 }
 
-/* Preloader image styling */
-.preloader img {
-    width: 100px;
-    height: auto;
-    border-radius: 50%;
-    animation: zoom 1.5s infinite alternate ease-in-out;
+/* Zoom-in Animation */
+.zoom-in {
+width: 100px;  /* Adjust size */
+height: 100px;
+animation: zoom 1.5s infinite ease-in-out;
 }
 
-/* Round animated border */
-.circle {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border: 4px solid transparent;
-    border-top: 4px solid #3498db;
-    border-radius: 50%;
-    animation: spin 1.5s linear infinite;
-}
-
-/* Fade-out effect */
-.preloader.fade-out {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* Keyframe animation for zooming effect */
+/* Keyframes for Zoom Effect */
 @keyframes zoom {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.2);
-    }
+0% { transform: scale(1); opacity: 0.7; }
+50% { transform: scale(1.2); opacity: 1; }
+100% { transform: scale(1); opacity: 0.7; }
 }
 
-/* Keyframe animation for rotating border */
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Content hidden initially */
+/* Page Content */
 .content {
-    display: none;
+display: none; /* Hide content initially */
+text-align: center;
+margin-top: 50px;
 }
 
-/* Show content when preloader fades */
-.preloader.fade-out + .content {
-    display: block;
-}
 </style>
-<!------------------------------------------------------------------------------------------------------------------>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+setTimeout(() => {
+    document.getElementById("preloader").classList.add("hidden");
+    document.querySelector(".content").style.display = "block";
+}, 2000); // Adjust time as needed
+});
+
+
+</script>
+<!------------------------------------------- preloader-end ------------------------------------------------------------>
 <div class="header-top header-top1">
     <div class="container">
         <div class="row">
@@ -226,8 +189,8 @@
                                 paragraph: "We provide the best possible care, tailored to individual needs, using innovative solutions while ensuring accessibility for all."
                             },
                             {
-                                main: "Beyond support",
-                                sub: "unlocking potential, one life at a time.",
+                                main: "BEYOND SUPPORT",
+                                sub: "UNLOCKING POTENTIAL, ONE LIFE AT A TIME.",
                                 paragraph: "Our mission is to support individuals in reaching their full potential with compassionate care and cutting-edge solutions."
                             },
                             {
@@ -628,10 +591,10 @@
                                 class="img-fluid invert_effect"></li>
                         <li data-target="#demo" data-slide-to="2"><img src="./assets/images/client-img3.png" alt=""
                                 class="img-fluid invert_effect"></li>
-                        <li data-target="#demo" data-slide-to="3"><img src="./assets/images/client-img4.png" alt=""
-                                class="img-fluid invert_effect"></li>
-                        <li data-target="#demo" data-slide-to="4"><img src="./assets/images/client-img5.png" alt=""
-                                class="img-fluid invert_effect"></li>
+                        <!-- <li data-target="#demo" data-slide-to="3"><img src="./assets/images/client-img4.png" alt=""
+                                class="img-fluid invert_effect"></li> -->
+                        <!-- <li data-target="#demo" data-slide-to="4"><img src="./assets/images/client-img5.png" alt=""
+                                class="img-fluid invert_effect"></li> -->
                     </ul>
                     <div class="review-section-outer position-relative">
                         <div class="carousel-card">
@@ -640,14 +603,34 @@
                                 <div class="carousel-item active">
                                     <figure><img src="./assets/images/happy-clients-section-img.png" alt=""
                                             class="img-fluid"></figure>
-                                    <h4 class="carousel-text">Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident deserunt mollit anim id est laborum.</h4>
+                                    <h4 class="carousel-text">I have been using their transport and home & living services, and I must say, the experience
+                                        has been outstanding. The staff is punctual, kind, and ensures a smooth process. Their dedication to accessible
+                                        healthcare is truly commendable!
+                                    </h4>
                                     <div class="about-border"></div>
-                                    <h4 class="carousel-title">Michel Barnier</h4>
-                                    <p class="carousel-end-text">Senior Advisor</p>
+                                    <h4 class="carousel-title">Michael Brown                                    </h4>
+                                    <p class="carousel-end-text">client</p>
                                 </div>
                                 <div class="carousel-item">
+                                    <figure><img src="./assets/images/happy-clients-section-img.png" alt=""
+                                            class="img-fluid"></figure>
+                                    <h4 class="carousel-text">OptimaCare Solutions has helped me regain my independence through their improved daily living
+                                        skills programs. Their support in social and community participation has been life-changing.</h4>
+                                    <div class="about-border"></div>
+                                    <h4 class="carousel-title">Sophia Martinez</h4>
+                                    <p class="carousel-end-text">client</p>
+                                </div>
+                                <div class="carousel-item">
+                                    <figure><img src="./assets/images/happy-clients-section-img.png" alt=""
+                                            class="img-fluid"></figure>
+                                    <h4 class="carousel-text">The specialist disability accommodation provided by OptimaCare Solutions has exceeded my
+                                        expectations. The environment is safe, comfortable, and well-maintained. The staff is incredibly supportive and
+                                        always available when needed!</h4>
+                                    <div class="about-border"></div>
+                                    <h4 class="carousel-title">Daniel Johnson</h4>
+                                    <p class="carousel-end-text">client</p>
+                                </div>
+                                <!-- <div class="carousel-item">
                                     <figure><img src="./assets/images/happy-clients-section-img.png" alt=""
                                             class="img-fluid"></figure>
                                     <h4 class="carousel-text">Duis aute irure dolor in reprehenderit in voluptate
@@ -655,9 +638,9 @@
                                         cupidatat non proident deserunt mollit anim id est laborum.</h4>
                                     <div class="about-border"></div>
                                     <h4 class="carousel-title">Michel Barnier</h4>
-                                    <p class="carousel-end-text">Senior Advisor</p>
-                                </div>
-                                <div class="carousel-item">
+                                    <p class="carousel-end-text">client</p>
+                                </div> -->
+                                <!-- <div class="carousel-item">
                                     <figure><img src="./assets/images/happy-clients-section-img.png" alt=""
                                             class="img-fluid"></figure>
                                     <h4 class="carousel-text">Duis aute irure dolor in reprehenderit in voluptate
@@ -665,28 +648,8 @@
                                         cupidatat non proident deserunt mollit anim id est laborum.</h4>
                                     <div class="about-border"></div>
                                     <h4 class="carousel-title">Michel Barnier</h4>
-                                    <p class="carousel-end-text">Senior Advisor</p>
-                                </div>
-                                <div class="carousel-item">
-                                    <figure><img src="./assets/images/happy-clients-section-img.png" alt=""
-                                            class="img-fluid"></figure>
-                                    <h4 class="carousel-text">Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident deserunt mollit anim id est laborum.</h4>
-                                    <div class="about-border"></div>
-                                    <h4 class="carousel-title">Michel Barnier</h4>
-                                    <p class="carousel-end-text">Senior Advisor</p>
-                                </div>
-                                <div class="carousel-item">
-                                    <figure><img src="./assets/images/happy-clients-section-img.png" alt=""
-                                            class="img-fluid"></figure>
-                                    <h4 class="carousel-text">Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident deserunt mollit anim id est laborum.</h4>
-                                    <div class="about-border"></div>
-                                    <h4 class="carousel-title">Michel Barnier</h4>
-                                    <p class="carousel-end-text">Senior Advisor</p>
-                                </div>
+                                    <p class="carousel-end-text">client</p>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -799,7 +762,7 @@
                 <ul class="list-unstyled">
                     <li class="list-item">
                         <h4 class="footer-link  footer-heading instagram-heading">
-                           Instagram
+                           Gallery
                         </h4>
                     </li>
                 </ul>
@@ -835,6 +798,13 @@
     </div>
     </div>
 </div>      
+
+
+
+
+
+
+
 
 <!-- BLOG SECTION POPUP -->
 <div id="blog-model-1" class="modal fade blog-model-con" tabindex="-1" style="display: none;" aria-hidden="true">
