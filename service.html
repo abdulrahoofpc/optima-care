@@ -679,7 +679,7 @@ changeBackground();
                             <div class="accordion-card">
                                 <div class="" id="heading1">
                                     <a href="#" class="btn btn-link text-decoration-none collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                                        <h5 style="font-size: 22px;">What services does OptimaCare Solutions provide? </h5>
+                                        <h5 class="parag" style="font-size: 22px;">What services does OptimaCare Solutions provide? </h5>
                                     </a>
                                 </div>
                                 <div id="collapse1" class="collapse" aria-labelledby="heading1">
@@ -699,7 +699,7 @@ changeBackground();
                             <div class="accordion-card">
                                 <div class="" id="heading2">
                                     <a href="#" class="btn btn-link text-decoration-none collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                        <h5 style="font-size: 22px;">How can I access transportation assistance?
+                                        <h5 class="parag" style="font-size: 22px;">How can I access transportation assistance?
                                         </h5>
                                     </a>
                                 </div>
@@ -720,7 +720,7 @@ changeBackground();
                             <div class="accordion-card">
                                 <div class="" id="heading3">
                                     <a href="#" class="btn btn-link text-decoration-none collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                        <h5 style="font-size: 22px;"> What is the difference between Daily Personal Activities and High Intensity support?
+                                        <h5 class="parag" style="font-size: 22px;"> What is the difference between Daily Personal Activities and High Intensity support?
                                         </h5>
                                     </a>
                                 </div>
@@ -742,7 +742,7 @@ changeBackground();
                             <div class="accordion-card">
                                 <div class="" id="heading4">
                                     <a href="#" class="btn btn-link text-decoration-none collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                        <h5 style="font-size: 22px;">  How does Behaviour Support help?
+                                        <h5 class="parag" style="font-size: 22px;">  How does Behaviour Support help?
                                         </h5>
                                     </a>
                                 </div>
@@ -763,13 +763,13 @@ changeBackground();
                             <div class="accordion-card accordion-card5-margin">
                                 <div class="" id="heading5">
                                     <a href="#" class="btn btn-link text-decoration-none collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                                        <h5 style="font-size: 22px;"> Can you help with community participation?
+                                        <h5 class="parag" style="font-size: 22px;"> Can you help with community participation?
                                         </h5>
                                     </a>
                                 </div>
                                 <div id="collapse5" class="collapse" aria-labelledby="heading5">
                                     <div class="card-body p-0">
-                                        <p class="text-left accordian-text-color">
+                                        <p class="parag" class="text-left accordian-text-color">
                                             Yes! Our Participate Community and Group Centre-Based Activities encourage individuals to engage in social events, recreational activities, volunteer work, and employment opportunities, fostering independence and confidence.
                                         </p>
                                     </div>
@@ -861,10 +861,13 @@ changeBackground();
         /* Responsive Styles */
             @media(max-width: 991px) {
         .frequently-asked-section {
-            padding: 315px 0 40px !important;
+            padding: 200px 0 40px !important;
         }
     }
         @media (max-width: 768px) {
+            .parag{
+                font-size: 17px !important;
+            }
             .offer-heading {
                 font-size: 28px;
             }
@@ -877,6 +880,12 @@ changeBackground();
             .accordion-card .card-body {
                 padding: 15px;
                 font-size: 14px;
+            }
+        }
+        @media (max-width: 564px) {
+
+        .frequently-asked-section {
+         padding: 100px 0 40px !important;
             }
         }
     </style>
