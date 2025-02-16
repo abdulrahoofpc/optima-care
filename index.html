@@ -4,7 +4,19 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home | OptimaCare</title>
+<title>OptimaCare Solutions | Personalized & Accessible Healthcare Services</title>
+<meta name="description" content="OptimaCare Solutions offers personalized, accessible healthcare services, including daily living assistance, wellbeing support, transport, and specialist disability care"/>
+<link rel="canonical" href="http://optimacaresolutions.com.au"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="OptimaCare Solutions | Personalized & Accessible Healthcare Services"/>
+<meta property="og:description" content="OptimaCare Solutions offers personalized, accessible healthcare services, including daily living assistance, wellbeing support, transport, and specialist disability care"/>
+<meta property="og:url" content="http://optimacaresolutions.com.au/"/>
+<meta property="og:image" content="http://optimacaresolutions.com.au/optima-care/assets/images/why-chooseus-img.png"/>
+<meta property="og:site_name" content="OptimaCare Solutions"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="OptimaCare Solutions offers personalized, accessible healthcare services, including daily living assistance, wellbeing support, transport, and specialist disability care"/>
+<meta name="twitter:title" content="OptimaCare Solutions | Personalized & Accessible Healthcare Services"/>
 <!-- faveicon -->
 <link rel="icon" type="image/png" href="./assets/images/favicons/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="./assets/images/favicons/favicon.svg" />
@@ -448,26 +460,89 @@ setTimeout(() => {
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="right-section">
-                   <form action="get">
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
                     <h2>Schedule a Free Consultation</h2>
                     <div class="input-icons">
-                     <div class="form-group position-relative">
-                         <input type="text" class="form-control input-text" id="validationCustom01" placeholder="Your name" required=""><i class="fa fa-user icon1"></i>
-                     </div>
-                     <div class="form-group position-relative">
-                        <input type="text" class="form-control input-text" id="validationCustom02" placeholder="Phone number" required=""><i class="fa-solid fa-phone icon2"></i>
-                     </div>
-                     <div class="form-group position-relative">
-                         <input type="text" class="form-control input-text" id="validationCustom03" placeholder="Date & time" required=""><i class="fa-solid fa-calendar-days icon3"></i>
-                     </div>
-                     <div class="form-group form-margin-bottom position-relative">
-                         <input type="text" class="form-control input-text" id="validationCustom04" placeholder="Location" required=""><i class="fa-sharp fa-solid fa-location-dot icon4"></i>
-                     </div>
+                    <div class="form-group position-relative">
+                    <input type="text" class="form-control input-text" name="name" placeholder="Your name" required>
+                    <i class="fa fa-user icon1"></i>
                     </div>
-                     <div class="banner-btn discover-btn-banner" >
-                         <a style="background-color: #fff; color: #74569a;" href="about.html" class="text-decoration-none">Book Now</a>
-                     </div>
-                   </form>
+                    <div class="form-group position-relative">
+                    <input type="text" class="form-control input-text" name="mobile" placeholder="Mobile number" required>
+                    <i class="fa-solid fa-phone icon2"></i>
+                    </div>
+                    <div class="form-group position-relative">
+                    <input type="number" class="form-control input-text" name="age" placeholder="Age" required>
+                    <i class="fa-solid fa-user icon3"></i>
+                    </div>
+                    <div class="form-group position-relative">
+                    <input type="date" class="form-control input-text" name="date" id="datePicker" required>
+                    <i class="fa-solid fa-calendar-days icon4"></i>
+                    </div>
+                    <div class="form-group position-relative">
+                    <input type="text" class="form-control input-text" name="service" placeholder="Service" required>
+                    <i class="fa-sharp fa-solid fa-briefcase icon5"></i>
+                    </div>
+                    </div>
+                    
+
+
+
+                    <div class="readmore-btn banner-btn discover-btn-banner">
+                    <button type="submit" style="border: none;  border-radius: 28px;padding: 16px 46px 16px 46px;background-color: #fff; color: #74569a;" class="text-decoration-none">Book Now</button>
+                    </div>
+                    </form>
+
+                    <script>
+                    // Set min date to today for the date input
+                    document.getElementById("datePicker").min = new Date().toISOString().split("T")[0];
+
+                    document.querySelector("form").addEventListener("submit", function(event) {
+                    event.preventDefault(); // Prevent default form submission
+
+                    const formData = new FormData(this);
+
+                    fetch(this.action, {
+                    method: this.method,
+                    body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                    if (data.success) {
+                        Swal.fire({
+                            title: "Booking Confirmed!",
+                            text: "Your appointment has been scheduled successfully.",
+                            icon: "success",
+                            showConfirmButton: false,
+                            timer: 3000,
+                            background: "#f0f8ff",
+                            color: "#333",
+                            backdrop: `
+                                rgba(0, 0, 0, 0.5)
+                                url("./assets/images/about-background.jpg")
+                                center center / cover no-repeat
+                            `
+                        });
+                        this.reset();
+                    } else {
+                        Swal.fire({
+                            title: "⚠️ Error!",
+                            text: "Something went wrong. Please try again.",
+                            icon: "error",
+                            confirmButtonColor: "#d33",
+                            confirmButtonText: "Retry",
+                            background: "#fff3cd",
+                            color: "#856404"
+                        });
+                    }
+                    })
+                    .catch(error => console.error("Error:", error));
+                    });
+                    </script>
+                    
                 </div>
             </div>
         </div>
@@ -664,10 +739,37 @@ setTimeout(() => {
                 <p class="footer-text">Copyright 2025 OptimaCare All Rights reserved</p>
                 <div class="social-icons text-center">
                     <ul class="list-unstyled">
-                        <li><a href="" class="text-decoration-none"><i class="fa-brands fa-twitter social-networks"></i></a></li>
-                        <li><a href="" class="text-decoration-none"><i class="fa-brands fa-facebook-f social-networks"></i></a></li>
-                        <li><a href="" class="text-decoration-none"><i class="fa-brands fa-pinterest-p social-networks"></i></a></li>
+                        <li>
+                            <a href="#" class="text-decoration-none social-link">
+                                <i class="fa-brands fa-facebook-f social-networks"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none social-link">
+                                <i class="fa-brands fa-instagram social-networks"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/optimacare-solutions-a2a154351/" class="text-decoration-none social-link">
+                                <i class="fa-brands fa-linkedin-in social-networks"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Info@optimacaresolutions.com.au" class="text-decoration-none">
+                                <i class="fa-solid fa-envelope social-networks"></i>
+                            </a>
+                        </li>
                     </ul>
+                    
+                    <script>
+                        document.querySelectorAll('.social-link').forEach(link => {
+                            link.addEventListener('click', function(event) {
+                                event.preventDefault(); // Prevent default behavior
+                                window.open(this.href, '_blank', 'noopener,noreferrer'); // Open in new tab
+                            });
+                        });
+                    </script>
+                    
                 </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 d-lg-block d-none">
@@ -972,7 +1074,7 @@ setTimeout(() => {
         <button id="close-widget" class="close-btn">&times;</button>
     </div>
     <div class="chat-content">
-        <img src="./assets/images/home-icon/icons-10.png" alt="Chat Icon">
+        <img src="./assets/images/home-icon/pop-icon.png" alt="Chat Icon">
         <p style="font-family: Arial, sans-serif;">Hire me</p>
         <button id="contact-now">Get in Touch</button>
     </div>
@@ -986,6 +1088,7 @@ setTimeout(() => {
         bottom: 20px;
         right: 20px;
         background: #fff;
+        z-index: 100;
         width: 140px;
         padding: 10px;
         border-radius: 15px;
@@ -1030,6 +1133,7 @@ setTimeout(() => {
         font-size: 12px;
         margin-bottom: 8px;
         color: #555;
+        font-weight: 600;
     }
 
     #contact-now {

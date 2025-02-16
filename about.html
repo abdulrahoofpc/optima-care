@@ -533,10 +533,36 @@ changeBackground();
                 <p class="footer-text">Copyright 2025 OptimaCare All Rights reserved</p>
                 <div class="social-icons text-center">
                     <ul class="list-unstyled">
-                        <li><a href="" class="text-decoration-none"><i class="fa-brands fa-twitter social-networks"></i></a></li>
-                        <li><a href="" class="text-decoration-none"><i class="fa-brands fa-facebook-f social-networks"></i></a></li>
-                        <li><a href="" class="text-decoration-none"><i class="fa-brands fa-pinterest-p social-networks"></i></a></li>
+                        <li>
+                            <a href="#" class="text-decoration-none social-link">
+                                <i class="fa-brands fa-facebook-f social-networks"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none social-link">
+                                <i class="fa-brands fa-instagram social-networks"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/optimacare-solutions-a2a154351/" class="text-decoration-none social-link">
+                                <i class="fa-brands fa-linkedin-in social-networks"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Info@optimacaresolutions.com.au" class="text-decoration-none">
+                                <i class="fa-solid fa-envelope social-networks"></i>
+                            </a>
+                        </li>
                     </ul>
+                    
+                    <script>
+                        document.querySelectorAll('.social-link').forEach(link => {
+                            link.addEventListener('click', function(event) {
+                                event.preventDefault(); // Prevent default behavior
+                                window.open(this.href, '_blank', 'noopener,noreferrer'); // Open in new tab
+                            });
+                        });
+                    </script>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 d-lg-block d-none">
