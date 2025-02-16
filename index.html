@@ -965,6 +965,176 @@ setTimeout(() => {
        </div>
     </div>
 </div>
+<!-------------------------------------------------chatbox------------------------------------------------------->
+
+<div id="chat-widget" class="chat-widget">
+    <div class="chat-header">
+        <button id="close-widget" class="close-btn">&times;</button>
+    </div>
+    <div class="chat-content">
+        <img src="./assets/images/home-icon/icons-10.png" alt="Chat Icon">
+        <p>We're here to help!</p>
+        <button id="contact-now">Chat Now</button>
+    </div>
+</div>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    .chat-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #fff;
+        width: 140px;
+        padding: 10px;
+        border-radius: 15px;
+        text-align: center;
+        color: #333;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .chat-header {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .close-btn {
+        background: red;
+        color: white;
+        border: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        font-size: 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: -5px;
+        top: -5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .chat-content img {
+        width: 40px;
+        height: 40px;
+        margin: 5px 0;
+    }
+
+    .chat-content p {
+        font-size: 12px;
+        margin-bottom: 8px;
+        color: #555;
+    }
+
+    #contact-now {
+        background: #5A5EB9;
+        color: white;
+        border: none;
+        padding: 5px 8px;
+        font-size: 11px;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: 0.3s;
+        width: 100%;
+    }
+
+    #contact-now:hover {
+        background: #4a4ea0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .chat-widget {
+            width: 120px;
+            padding: 8px;
+            bottom: 15px;
+            right: 15px;
+        }
+
+        .chat-content img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .chat-content p {
+            font-size: 11px;
+        }
+
+        #contact-now {
+            font-size: 10px;
+            padding: 4px 7px;
+        }
+
+        .close-btn {
+            width: 16px;
+            height: 16px;
+            font-size: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .chat-widget {
+            width: 100px;
+            padding: 6px;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .chat-content img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .chat-content p {
+            font-size: 10px;
+        }
+
+        #contact-now {
+            font-size: 9px;
+            padding: 3px 6px;
+        }
+
+        .close-btn {
+            width: 14px;
+            height: 14px;
+            font-size: 9px;
+        }
+    }
+</style>
+
+<script>
+    document.getElementById("contact-now").addEventListener("click", function() {
+        window.location.href = "contact.html"; // Update with actual contact page
+    });
+
+    document.getElementById("close-widget").addEventListener("click", function() {
+        document.getElementById("chat-widget").style.display = "none";
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!--------------------------------------------chatbox end------------------------------------------------------------------->
+
     <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
