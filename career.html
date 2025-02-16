@@ -247,16 +247,51 @@
                     <div class="popup-content">
                         <span class="close-btn" onclick="closePopup()">&times;</span>
                         <h2 style="font-size: 25px;">Join Our Team</h2>
-                        <form method="post" action="join-team.php">
-                            <input class="form-input-fields" type="text" id="fname" name="fname" placeholder="First Name" required>
-                            <input class="form-input-fields" type="text" id="lname" name="lname" placeholder="Last Name" required>
-                            <input class="form-input-fields" type="email" id="email" name="email" placeholder="Email" required>
-                            <input class="form-input-fields" type="text" id="phone" name="phone" placeholder="Phone" required>
+                        <form id="web3form" method="POST" action="https://api.web3forms.com/submit">
+                            <!-- Web3Forms Access Key -->
+                            <input type="hidden" name="access_key" value="c1b85a6f-35c3-4a65-963e-a204c8ea0c14">
+                        
+                            <input class="form-input-fields" type="text" id="fname" name="First Name" placeholder="First Name" required>
+                            <input class="form-input-fields" type="text" id="lname" name="Last Name" placeholder="Last Name" required>
+                            <input class="form-input-fields" type="email" id="email" name="Email" placeholder="Email" required>
+                            <input class="form-input-fields" type="text" id="phone" name="Phone" placeholder="Phone" required>
                             <textarea id="message" name="message" class="message-field" placeholder="Why do you want to join?" required></textarea>
+                        
                             <div class="popup-btn">
                                 <button type="submit">Apply Now</button>
                             </div>
                         </form>
+                        
+                        <!-- Success Popup -->
+                        <div id="success-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #4CAF50; color: white; padding: 20px; border-radius: 5px; text-align: center;">
+                            <p>Form submitted successfully!</p>
+                            <button onclick="document.getElementById('success-popup').style.display='none'">OK</button>
+                        </div>
+                        
+                        <script>
+                            document.getElementById("web3form").addEventListener("submit", function(event) {
+                                event.preventDefault(); // Prevent default form submission
+                        
+                                let formData = new FormData(this);
+                        
+                                fetch("https://api.web3forms.com/submit", {
+                                    method: "POST",
+                                    body: formData
+                                })
+                                .then(response => response.json())
+                                .then(result => {
+                                    if (result.success) {
+                                        document.getElementById("success-popup").style.display = "block";
+                                        document.getElementById("web3form").reset(); // Reset form after success
+                                    } else {
+                                        alert("Error: " + result.message);
+                                    }
+                                })
+                                .catch(error => console.error("Error:", error));
+                            });
+                        </script>
+                        
+                        
                     </div>
                 </div>
             

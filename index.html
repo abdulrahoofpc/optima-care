@@ -487,15 +487,17 @@ setTimeout(() => {
                     <i class="fa-sharp fa-solid fa-briefcase icon5"></i>
                     </div>
                     </div>
-                    
-
-
-
                     <div class="readmore-btn banner-btn discover-btn-banner">
-                    <button type="submit" style="border: none;  border-radius: 28px;padding: 16px 46px 16px 46px;background-color: #fff; color: #74569a;" class="text-decoration-none">Book Now</button>
+                    <button  type="submit" class="butmm" style="border: none;  border-radius: 28px;padding: 16px 46px 16px 46px;background-color: #fff; color: #74569a;" class="text-decoration-none">Book Now</button>
                     </div>
                     </form>
-
+                    <style>
+                        @media screen and (max-width: 575px) {
+                            button.butmm {
+                            padding: 12px 30px 12px 30px !important;
+                                }
+                            }
+                     </style>
                     <script>
                     // Set min date to today for the date input
                     document.getElementById("datePicker").min = new Date().toISOString().split("T")[0];
@@ -1214,7 +1216,7 @@ setTimeout(() => {
 
 <script>
     document.getElementById("contact-now").addEventListener("click", function() {
-        window.location.href = "contact.html"; // Update with actual contact page
+        window.location.href = "tel:0473481552"; // Update with actual contact page
     });
 
     document.getElementById("close-widget").addEventListener("click", function() {
